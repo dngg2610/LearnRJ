@@ -26,18 +26,22 @@ function submit_fnc_2(e, elm) {
     http://api.openweathermap.org/geo/1.0/direct?q=${input.value}&appid=418d123a8a610f690bbd1cdff706380b
     `)
         .then((data) => {
-            console.log(data.data)
-            const lat  = data.data[0].lat
-            const lon  = data.data[0].lon
-            axios.get(`
+            if (data.data.length == 0) {
+                alert("Khu vực không hợp lệ")
+                return false
+            }
+            const lat = data.data[0].lat
+            const lon = data.data[0].lon
+            return axios.get(`
             https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=418d123a8a610f690bbd1cdff706380b&units=Metric
         `)
                 .then((data) => {
-                    console.log(data.data)
-                    const main = data.data.main
-                    document.querySelector("#humidity").innerHTML = "Độ ẩm: " + main.humidity
-                    document.querySelector("#pressure").innerHTML = "Áp lực: " + main.pressure
-                    document.querySelector("#temp").innerHTML = "Nhiệt độ: " + main.temp
+                    if (data != false) {
+                        const main = data.data.main
+                        document.querySelector("#humidity").innerHTML = "Độ ẩm: " + main.humidity
+                        document.querySelector("#pressure").innerHTML = "Áp lực: " + main.pressure
+                        document.querySelector("#temp").innerHTML = "Nhiệt độ: " + main.temp
+                    }
                 })
 
         })
