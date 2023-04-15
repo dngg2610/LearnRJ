@@ -22,6 +22,8 @@ function submit_fnc(e, elm) {
 function submit_fnc_2(e, elm) {
     e.preventDefault()
     const input = elm.querySelector("input")
+    const button = elm.querySelector("button")
+    button.disabled = true
     axios.get(`
     http://api.openweathermap.org/geo/1.0/direct?q=${input.value}&appid=418d123a8a610f690bbd1cdff706380b
     `)
@@ -34,16 +36,20 @@ function submit_fnc_2(e, elm) {
             const lon = data.data[0].lon
             return axios.get(`
             https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=418d123a8a610f690bbd1cdff706380b&units=Metric
-        `)
-                .then((data) => {
-                    if (data != false) {
-                        const main = data.data.main
-                        document.querySelector("#humidity").innerHTML = "Độ ẩm: " + main.humidity
-                        document.querySelector("#pressure").innerHTML = "Áp lực: " + main.pressure
-                        document.querySelector("#temp").innerHTML = "Nhiệt độ: " + main.temp
-                    }
-                })
-
+            `)
+        })
+        .then((data) => {
+            if (data != false) {
+                console.log(data.data)
+                const main = data.data.main
+                document.querySelector("#humidity").innerHTML = "Độ ẩm: " + main.humidity
+                document.querySelector("#pressure").innerHTML = "Áp lực: " + main.pressure
+                document.querySelector("#temp").innerHTML = "Nhiệt độ: " + main.temp
+            }
+            button.disabled = false
+        }).catch((error) => {
+            button.disabled = false
+            alert("API error")
         })
 
 }
