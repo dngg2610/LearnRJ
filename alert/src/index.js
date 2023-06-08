@@ -7,13 +7,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 function Alert(props) {
-  return (<div class="alert alert-warning" role="alert">
-    {props.textProp}
-  </div>)
+  return <div >
+    <button onClick={() => alert(props.text)}>Click me</button>
+  </div>
 }
+
 root.render(
-  <Alert textProp="Cảnh báo! Tài nguyên bạn vừa truy cập không tồn tại." />
+  <Alert text="Cảnh báo! Tài nguyên bạn vừa truy cập không tồn tại." />
 );
 
 // If you want to start measuring performance in your app, pass a function
