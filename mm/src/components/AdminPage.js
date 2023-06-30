@@ -3,15 +3,21 @@ import React, { useState } from 'react';
 function AdminPage(props) {
     const { products, setProducts } = props;
     const [name, setName] = useState('');
+    const [desc, setDesc] = useState('');
     const [price, setPrice] = useState('');
     const [selectedImage, setSelectedImage] = useState(null);
     const [nameError, setNameError] = useState('');
     const [priceError, setPriceError] = useState('');
+    const [descError, setDescError] = useState('');
     const [imageError, setImageError] = useState('');
 
     const handleNameChange = (event) => {
         setName(event.target.value);
     };
+
+    const handleDescChange = (event) => {
+        setDesc(event.target.value);
+    }
 
     const handlePriceChange = (event) => {
         setPrice(event.target.value);
@@ -34,6 +40,8 @@ function AdminPage(props) {
             setPriceError('Vui lòng nhập giá sản phẩm');
             return;
         }
+
+
         if (!/^\d+(\.\d{1,2})?$/.test(price)) {
             setPriceError('Vui lòng nhập giá hợp lệ');
             return;
@@ -42,7 +50,7 @@ function AdminPage(props) {
             setImageError('Vui lòng chọn hình ảnh');
             return;
         }
-        const newProduct = { name, price, image: URL.createObjectURL(selectedImage) };
+        const newProduct = { name, price, desc, image: URL.createObjectURL(selectedImage) };
         setProducts([...products, newProduct]);
         setName('');
         setPrice('');
@@ -50,6 +58,7 @@ function AdminPage(props) {
         setNameError('');
         setPriceError('');
         setImageError('');
+
     };
 
     const handleDeleteProduct = (index) => {
@@ -64,6 +73,7 @@ function AdminPage(props) {
 
             <div className="mb-3">
                 <h3>Thêm sản phẩm</h3>
+
                 <label htmlFor="nameInput" className="form-label">Tên sản phẩm:</label>
                 <input
                     type="text"
@@ -73,6 +83,16 @@ function AdminPage(props) {
                     className={`form-control ${nameError ? 'is-invalid' : ''}`}
                 />
                 {nameError && <div className="invalid-feedback">{nameError}</div>}
+
+                <label htmlFor="descInput" className="form-label">Thêm mô tả:</label>
+                <input
+                    type="text"
+                    id="descInput"
+                    value={desc}
+                    onChange={handleDescChange}
+                    className={`form-control ${descError ? 'is-invalid' : ''}`}
+                />
+                {descError && <div className="invalid-feedback">{descError}</div>}
 
                 <label htmlFor="priceInput" className="form-label">Giá sản phẩm:</label>
                 <div className="input-group">
@@ -102,11 +122,12 @@ function AdminPage(props) {
 
             <h3>Danh sách sản phẩm:</h3>
             {products.map((product, index) => (
-                <div key={index} className="card mb-3 mt-4 " style={{cursor:"pointer"}}>
+                <div key={index} className="card mb-3 mt-4 " style={{ cursor: "pointer" }}>
                     <img src={product.image} alt="Hình ảnh" className="card-img-top" style={{ maxWidth: '200px' }} />
                     <div className="card-body">
                         <h5 className="card-title">{product.name}</h5>
                         <p className="card-text">Giá: {product.price} VNĐ</p>
+                        <p className="card-text">{product.desc}</p>
                         <button onClick={() => handleDeleteProduct(index)} className="btn btn-danger">Xóa</button>
                     </div>
                 </div>

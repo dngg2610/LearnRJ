@@ -7,9 +7,9 @@ import { useState } from 'react';
 
 function App() {
   const [ products, setProducts] = useState([
-    { id: 1, name: 'Mũ bảo hiểm', description: 'Mô tả sản phẩm A', price: "540.000", image: '/images/mubh.jpg' },
-    { id: 2, name: 'Giày nike', description: 'Mô tả sản phẩm B', price: "5.600.000", image: '/images/nikegiay.jpg' },
-    { id: 3, name: 'Giày Adidas', description: 'Mô tả sản phẩm C', price: "3.200.000", image: '/images/giayadidas.jpg' },
+    { id: 1, name: 'Mũ bảo hiểm', desc: 'Mô tả sản phẩm A', price: "540.000", image: '/images/mubh.jpg' },
+    { id: 2, name: 'Giày nike', desc: 'Mô tả sản phẩm B', price: "5.600.000", image: '/images/nikegiay.jpg' },
+    { id: 3, name: 'Giày Adidas', desc: 'Mô tả sản phẩm C', price: "3.200.000", image: '/images/giayadidas.jpg' },
   ])
   return (
     <Router>
