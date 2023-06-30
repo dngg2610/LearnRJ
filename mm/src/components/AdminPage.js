@@ -102,7 +102,7 @@ function AdminPage(props) {
 
             <h3>Danh sách sản phẩm:</h3>
             {products.map((product, index) => (
-                <div key={index} className="card mb-3">
+                <div key={index} className="card mb-3 mt-4 " style={{cursor:"pointer"}}>
                     <img src={product.image} alt="Hình ảnh" className="card-img-top" style={{ maxWidth: '200px' }} />
                     <div className="card-body">
                         <h5 className="card-title">{product.name}</h5>

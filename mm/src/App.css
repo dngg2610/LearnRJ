@@ -53,5 +53,5 @@
 
 .card:hover .card-title,
 .card:hover .card-text {
-  color: #ff0000; /* Màu chữ khi hover vào */
+  color: #ff0000;
 }
