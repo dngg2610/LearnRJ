@@ -35,6 +35,10 @@ function AdminPage(props) {
             return;
         }
 
+        if (!desc.trim()) {
+            setDescError('Vui lòng nhập mô tả sản phẩm');
+            return;
+        }
 
         if (!price.trim()) {
             setPriceError('Vui lòng nhập giá sản phẩm');
