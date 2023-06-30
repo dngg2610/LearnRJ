@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ReactTextareaAutosize from 'react-textarea-autosize';
 
 function AdminPage(props) {
     const { products, setProducts } = props;
@@ -155,14 +156,15 @@ function AdminPage(props) {
                 <label htmlFor="descInput" className="form-label">
                     Thêm mô tả:
                 </label>
-                <input
-                    type="text"
+                <ReactTextareaAutosize
                     id="descInput"
                     value={desc}
                     onChange={handleDescChange}
-                    className={`form - control ${descError ? 'is-invalid' : ''}`}
+                    className={`form-control ${descError ? 'is-invalid' : ''}`}
+                    rows={3}
                 />
-                {descError && <div className="invalid-feedback">{descError}</div>}<br/>
+                {descError && <div className="invalid-feedback">{descError}</div>}
+
                 <label htmlFor="priceInput" className="form-label">
                     Giá sản phẩm:
                 </label>
