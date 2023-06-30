@@ -7,10 +7,10 @@ function HomePage(props) {
     <div>
       <h1>Trang chủ</h1>
 
-      <div className="row">
+      <div className="row d-flex align-items-stretch">
         {products.map((product) => (
           <div key={product.id} className="col-md-4 mb-3">
-            <div className="card">
+            <div className="card h-100">
               <img src={product.image} alt="Hình ảnh" className="card-img-top" style={{ maxWidth: '200px' }} />
               <div className="card-body">
                 <h5 className="card-title">{product.name}</h5>
