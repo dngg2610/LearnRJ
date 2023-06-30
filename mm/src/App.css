@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+
+
+.card {
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-title,
+.card-text {
+  transition: color 0.3s ease;
+}
+
+.card:hover .card-title,
+.card:hover .card-text {
+  color: #ff0000; /* Màu chữ khi hover vào */
+}
