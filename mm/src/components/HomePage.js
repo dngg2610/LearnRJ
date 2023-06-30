@@ -9,7 +9,7 @@ function HomePage(props) {
 
       <h1>Trang chủ</h1>
 
-      <div className="row d-flex align-items-stretch mt-4" style={{cursor:"pointer"}}>
+      <div className="row d-flex align-items-stretch mt-4" style={{ cursor: "pointer" }}>
         {products.map((product) => (
           <div key={product.id} className="col-md-4 mb-3">
             <div className="card h-100">
