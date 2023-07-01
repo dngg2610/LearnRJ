@@ -27,8 +27,9 @@ function HomePage(props) {
 
       <div className="row d-flex align-items-stretch mt-4" style={{ cursor: "pointer" }}>
         {products
-          .filter((product) =>
-            product.name.toLowerCase().includes(searchTerm.toLowerCase())
+          .filter((product) => (
+            product.name.toLowerCase().includes(searchTerm.toLowerCase()) || product.id.toString().includes(searchTerm)
+          )
           )
           .map((product) => (
             <div key={product.id} className="col-md-4 mb-3">

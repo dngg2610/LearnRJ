@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ReactTextareaAutosize from 'react-textarea-autosize';
 import { RiEdit2Line, RiDeleteBinLine } from 'react-icons/ri';
+import { v4 as uuidv4 } from 'uuid';
 
 function AdminPage(props) {
     const { products, setProducts } = props;
@@ -13,6 +14,7 @@ function AdminPage(props) {
     const [descError, setDescError] = useState('');
     const [imageError, setImageError] = useState('');
     const [editingIndex, setEditingIndex] = useState(-1);
+    const [productId, setProductId] = useState(0);
 
     const handleNameChange = (event) => {
         setName(event.target.value);
@@ -59,6 +61,7 @@ function AdminPage(props) {
         }
 
         const newProduct = {
+            id: uuidv4(),
             name,
             price,
             desc,
@@ -66,6 +69,7 @@ function AdminPage(props) {
         };
 
         setProducts([...products, newProduct]);
+        setProductId(uuidv4());
         setName('');
         setPrice('');
         setSelectedImage(null);
