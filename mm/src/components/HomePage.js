@@ -35,7 +35,7 @@ function HomePage(props) {
           .map((product) => (
             <div key={product.id} className="col-md-4 mb-3">
               <div className="card h-100">
-                <img src={product.image} alt="Hình ảnh" className="card-img-top" style={{ width: '100%', height: '350px' }} />
+                <img src={product.image} alt="Hình ảnh" className="card-img-top img-fluid" style={{ objectFit: 'cover', height: '370px' }} />
                 <div className="card-body">
                   <h5 className="card-title">{product.name}</h5>
                   <p className="card-text">Giá: {product.price} VNĐ</p>
