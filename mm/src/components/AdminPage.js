@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import ReactTextareaAutosize from 'react-textarea-autosize';
 import { RiEdit2Line, RiDeleteBinLine } from 'react-icons/ri';
 import { v4 as uuidv4 } from 'uuid';
+import { FaEye } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 function AdminPage(props) {
     const { products, setProducts } = props;
@@ -224,7 +226,9 @@ function AdminPage(props) {
                         <button onClick={() => handleDeleteProduct(index)} className="btn btn-danger">
                             <RiDeleteBinLine /> Xóa
                         </button>
-
+                        <Link to={`/product/${product.id}`} className="btn btn-secondary">
+                            <FaEye className="icon" /> Xem sản phẩm
+                        </Link>
                     </div>
                 </div>
             ))}

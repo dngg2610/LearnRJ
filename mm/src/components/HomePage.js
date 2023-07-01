@@ -3,6 +3,7 @@ import '../App.css';
 import { FaSearch } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { FaShoppingCart, FaEye } from 'react-icons/fa';
+import ProductDetail from './ProductDetail';
 
 function HomePage(props) {
   const { products } = props;
