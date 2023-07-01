@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import '../App.css';
 import { FaSearch } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import { FaShoppingCart, FaEye } from 'react-icons/fa';
 
 function HomePage(props) {
   const { products } = props;
@@ -36,6 +38,14 @@ function HomePage(props) {
                   <h5 className="card-title">{product.name}</h5>
                   <p className="card-text">Giá: {product.price} VNĐ</p>
                   <p className="card-text">{product.desc}</p>
+                  <div className="button-group">
+                    <Link to={`/buy/${product.id}`} className="btn btn-primary">
+                      <FaShoppingCart className="icon" /> Mua hàng
+                    </Link>
+                    <Link to={`/product/${product.id}`} className="btn btn-secondary">
+                      <FaEye className="icon" /> Xem sản phẩm
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
