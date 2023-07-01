@@ -208,30 +208,36 @@ function AdminPage(props) {
             </div>
 
             <h3>Danh sách sản phẩm:</h3>
-            {products.map((product, index) => (
-                <div key={index} className="card mb-3 mt-4 " style={{ cursor: 'pointer' }}>
-                    <img
-                        src={product.image}
-                        alt="Hình ảnh"
-                        className="card-img-top"
-                        style={{ maxWidth: '200px' }}
-                    />
-                    <div className="card-body">
-                        <h5 className="card-title">{product.name}</h5>
-                        <p className="card-text">Giá: {product.price} VNĐ</p>
-                        <p className="card-text">{product.desc}</p>
-                        <button onClick={() => handleEditProduct(index)} className="btn btn-primary">
-                            <RiEdit2Line /> Sửa
-                        </button>
-                        <button onClick={() => handleDeleteProduct(index)} className="btn btn-danger">
-                            <RiDeleteBinLine /> Xóa
-                        </button>
-                        <Link to={`/product/${product.id}`} className="btn btn-secondary">
-                            <FaEye className="icon" /> Xem sản phẩm
-                        </Link>
+            <div className="row">
+                {products.map((product, index) => (
+                    <div key={index} className="col-md-4 mb-4">
+                        <div className="card mt-4" style={{ width: '100%',cursor:'pointer' }} >
+                            <img
+                                src={product.image}
+                                alt="Hình ảnh"
+                                className="card-img-top"
+                                style={{ objectFit: 'cover', height: '370px' }}
+                            />
+                            <div className="card-body">
+                                <h5 className="card-title">{product.name}</h5>
+                                <p className="card-text">Giá: {product.price} VNĐ</p>
+                                <p className="card-text">{product.desc}</p>
+                                <div className="d-flex justify-content-between">
+                                    <button onClick={() => handleEditProduct(index)} className="btn btn-primary">
+                                        <RiEdit2Line /> Sửa
+                                    </button>
+                                    <button onClick={() => handleDeleteProduct(index)} className="btn btn-danger">
+                                        <RiDeleteBinLine /> Xóa
+                                    </button>
+                                </div>
+                                <Link to={`/product/${product.id}`} className="btn btn-secondary mt-3">
+                                    <FaEye className="icon" /> Xem sản phẩm
+                                </Link>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            ))}
+                ))}
+            </div>
         </div>);
 }
 
