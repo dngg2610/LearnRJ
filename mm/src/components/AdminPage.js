@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ReactTextareaAutosize from 'react-textarea-autosize';
+import { RiEdit2Line, RiDeleteBinLine } from 'react-icons/ri';
 
 function AdminPage(props) {
     const { products, setProducts } = props;
@@ -139,7 +140,7 @@ function AdminPage(props) {
             <h2>Trang admin</h2>
 
             <div className="mb-3">
-                <h3>Thêm sản phẩm</h3>
+                <h3>Thêm và chỉnh sửa sản phẩm</h3>
 
                 <label htmlFor="nameInput" className="form-label">
                     Tên sản phẩm:
@@ -214,11 +215,12 @@ function AdminPage(props) {
                         <p className="card-text">Giá: {product.price} VNĐ</p>
                         <p className="card-text">{product.desc}</p>
                         <button onClick={() => handleEditProduct(index)} className="btn btn-primary">
-                            Sửa
+                            <RiEdit2Line /> Sửa
                         </button>
                         <button onClick={() => handleDeleteProduct(index)} className="btn btn-danger">
-                            Xóa
+                            <RiDeleteBinLine /> Xóa
                         </button>
+
                     </div>
                 </div>
             ))}

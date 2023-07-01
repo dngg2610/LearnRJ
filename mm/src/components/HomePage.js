@@ -1,29 +1,46 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../App.css';
+import { FaSearch } from 'react-icons/fa';
 
 function HomePage(props) {
   const { products } = props;
+  const [searchTerm, setSearchTerm] = useState('');
 
   return (
     <div>
-
       <h1>Trang chủ</h1>
 
-      <div className="row d-flex align-items-stretch mt-4" style={{ cursor: "pointer" }}>
-        {products.map((product) => (
-          <div key={product.id} className="col-md-4 mb-3">
-            <div className="card h-100">
-              <img src={product.image} alt="Hình ảnh" className="card-img-top" style={{ width: '100%', height: '350px' }} />
-              <div className="card-body">
-                <h5 className="card-title">{product.name}</h5>
-                <p className="card-text">Giá: {product.price} VNĐ</p>
-                <p className="card-text">{product.desc}</p>
-              </div>
-            </div>
-          </div>
-        ))}
+      <div className="search-container mt-4">
+        <input
+          type="text"
+          placeholder="Tìm kiếm sản phẩm..."
+          className="search-input"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+        <button className="search-button">
+          <FaSearch />
+        </button>
       </div>
 
+      <div className="row d-flex align-items-stretch mt-4" style={{ cursor: "pointer" }}>
+        {products
+          .filter((product) =>
+            product.name.toLowerCase().includes(searchTerm.toLowerCase())
+          )
+          .map((product) => (
+            <div key={product.id} className="col-md-4 mb-3">
+              <div className="card h-100">
+                <img src={product.image} alt="Hình ảnh" className="card-img-top" style={{ width: '100%', height: '350px' }} />
+                <div className="card-body">
+                  <h5 className="card-title">{product.name}</h5>
+                  <p className="card-text">Giá: {product.price} VNĐ</p>
+                  <p className="card-text">{product.desc}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+      </div>
     </div>
   );
 }
