@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "https://dngg2610.github.io/LearnRJ/mm/static/css/main.a55a3b20.css",
-    "main.js": "https://dngg2610.github.io/LearnRJ/mm/static/js/main.0e2e7927.js",
+    "main.js": "https://dngg2610.github.io/LearnRJ/mm/static/js/main.e425c14c.js",
     "index.html": "https://dngg2610.github.io/LearnRJ/mm/index.html",
     "main.a55a3b20.css.map": "https://dngg2610.github.io/LearnRJ/mm/static/css/main.a55a3b20.css.map",
-    "main.0e2e7927.js.map": "https://dngg2610.github.io/LearnRJ/mm/static/js/main.0e2e7927.js.map"
+    "main.e425c14c.js.map": "https://dngg2610.github.io/LearnRJ/mm/static/js/main.e425c14c.js.map"
   },
   "entrypoints": [
     "static/css/main.a55a3b20.css",
-    "static/js/main.0e2e7927.js"
+    "static/js/main.e425c14c.js"
   ]
 }
