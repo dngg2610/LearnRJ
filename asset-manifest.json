@@ -1,16 +1,13 @@
 {
   "files": {
-    "main.css": "/LearnRJ/form/static/css/main.5ec55c93.css",
-    "main.js": "/LearnRJ/form/static/js/main.ba344f40.js",
-    "static/js/787.aeb39de0.chunk.js": "/LearnRJ/form/static/js/787.aeb39de0.chunk.js",
-    "static/media/logo.svg": "/LearnRJ/form/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
-    "index.html": "/LearnRJ/form/index.html",
-    "main.5ec55c93.css.map": "/LearnRJ/form/static/css/main.5ec55c93.css.map",
-    "main.ba344f40.js.map": "/LearnRJ/form/static/js/main.ba344f40.js.map",
-    "787.aeb39de0.chunk.js.map": "/LearnRJ/form/static/js/787.aeb39de0.chunk.js.map"
+    "main.css": "https://dngg2610.github.io/LearnRJ/mm/static/css/main.a55a3b20.css",
+    "main.js": "https://dngg2610.github.io/LearnRJ/mm/static/js/main.0e2e7927.js",
+    "index.html": "https://dngg2610.github.io/LearnRJ/mm/index.html",
+    "main.a55a3b20.css.map": "https://dngg2610.github.io/LearnRJ/mm/static/css/main.a55a3b20.css.map",
+    "main.0e2e7927.js.map": "https://dngg2610.github.io/LearnRJ/mm/static/js/main.0e2e7927.js.map"
   },
   "entrypoints": [
-    "static/css/main.5ec55c93.css",
-    "static/js/main.ba344f40.js"
+    "static/css/main.a55a3b20.css",
+    "static/js/main.0e2e7927.js"
   ]
 }
